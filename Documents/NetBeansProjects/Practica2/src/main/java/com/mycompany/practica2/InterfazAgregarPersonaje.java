@@ -265,11 +265,10 @@ public class InterfazAgregarPersonaje extends javax.swing.JFrame {
         if (Data.NombresPersonajes[i] != null && Data.NombresPersonajes[i].equalsIgnoreCase(nombre)) {
             JOptionPane.showMessageDialog(this, "NOMBRE EN USO");
             return;
-        }else{
-            Data.NombresPersonajes[Data.contador] = nombre;
-            }
         }
+    }
     
+    Data.NombresPersonajes[Data.contador] = nombre;
     Data.NombresArmas[Data.contador] = arma ;
     
     if (hp>=100&&hp<=500){
@@ -308,6 +307,7 @@ public class InterfazAgregarPersonaje extends javax.swing.JFrame {
     }
  
     Data.IDpersonaje[Data.contador] = Data.contadorId ;
+    JOptionPane.showMessageDialog(this, "ID del personaje es: " + Data.IDpersonaje[Data.contador]);
     Data.contador++ ;
     Data.contadorId++ ;
     
