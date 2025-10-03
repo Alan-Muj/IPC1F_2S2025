@@ -315,47 +315,63 @@ public class InterfazModificarPersonaje extends javax.swing.JFrame {
     private void btnModPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModPersonajeActionPerformed
         // TODO add your handling code here:
     String armamod = txtArmaMod.getText() ;
-    int hpmod = Integer.parseInt(txtHPMod.getText());
-    int nivelAtaquemod = Integer.parseInt(txtAtaqueMod.getText());
-    int velocidadmod = Integer.parseInt(txtVelocidadMod.getText());
-    int agilidadmod = Integer.parseInt(txtAgilidadMod.getText());
-    int defensamod = Integer.parseInt(txtDefensaMod.getText());
-    
+    if(!armamod.isEmpty()){
     Data.NombresArmas[posicion] = armamod ;
-    
-    if (hpmod>=100&&hpmod<=500){
-        Data.PuntosVida[posicion] = hpmod ;
-    } else {
+    }
+
+    try{
+    int hpmod = Integer.parseInt(txtHPMod.getText());
+        if (hpmod>=100&&hpmod<=500){
+            Data.PuntosVida[posicion] = hpmod ;
+        } else {
     JOptionPane.showMessageDialog(this, "Puntos de vida del personaje debe estar entre 100 y 500");
     return;
+          }
+    }catch(NumberFormatException e) {
     }
     
-    if (nivelAtaquemod>=10 && nivelAtaquemod<=100){
-        Data.NivelAtaque[posicion] = nivelAtaquemod ;
-    } else {
+    try{
+    int nivelAtaquemod = Integer.parseInt(txtAtaqueMod.getText());    
+        if (nivelAtaquemod>=10 && nivelAtaquemod<=100){
+            Data.NivelAtaque[posicion] = nivelAtaquemod ;
+        } else {
     JOptionPane.showMessageDialog(this, "Nivel de ataque del personaje debe estar entre 10 y 100");
     return;
     }
+    }catch(NumberFormatException e){
+    }
     
-    if (velocidadmod>=1 && velocidadmod<=10){
-        Data.Velocidad[posicion] = velocidadmod ;
-    } else {
+    try{
+    int velocidadmod = Integer.parseInt(txtVelocidadMod.getText());   
+        if (velocidadmod>=1 && velocidadmod<=10){
+            Data.Velocidad[posicion] = velocidadmod ;
+        } else {
     JOptionPane.showMessageDialog(this, "Velocidad del personaje debe estar entre 1 y 10");
     return;
     }
+    }catch(NumberFormatException e) {
+    }
     
-    if (agilidadmod>=1 && agilidadmod<=10){
-        Data.Agilidad[posicion] = agilidadmod ;
-    } else {
+    try{
+    int agilidadmod = Integer.parseInt(txtAgilidadMod.getText());
+        if (agilidadmod>=1 && agilidadmod<=10){
+            Data.Agilidad[posicion] = agilidadmod ;
+        } else {
     JOptionPane.showMessageDialog(this, "Agilidad del personaje debe estar entre 1 y 10");
     return;
     }
+    }catch(NumberFormatException e){
+    }
     
-    if (defensamod>=1 && defensamod<=50){
-        Data.Defensa[posicion] = defensamod ;
-    } else {
+    try{
+    int defensamod = Integer.parseInt(txtDefensaMod.getText());    
+        if (defensamod>=1 && defensamod<=50){
+            Data.Defensa[posicion] = defensamod ;
+        } else {
     JOptionPane.showMessageDialog(this, "Defensa del personaje debe estar entre 1 y 10");
     return;
+    }
+    }catch(NumberFormatException e){
     }
 
     JOptionPane.showMessageDialog(this, "Personaje modificado correctamente");
