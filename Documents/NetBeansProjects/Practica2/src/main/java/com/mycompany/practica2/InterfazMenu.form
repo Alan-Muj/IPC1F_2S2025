@@ -35,6 +35,7 @@
                           <Component id="btnModificarPersonaje" alignment="1" min="-2" pref="229" max="-2" attributes="0"/>
                           <Component id="btnAgregarPersonaje" min="-2" pref="229" max="-2" attributes="0"/>
                           <Component id="btnEliminarPersonaje" alignment="1" min="-2" pref="229" max="-2" attributes="0"/>
+                          <Component id="btnVerPersonaje" alignment="1" min="-2" pref="229" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
                   </Group>
@@ -53,7 +54,9 @@
               <Component id="btnModificarPersonaje" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btnEliminarPersonaje" min="-2" pref="32" max="-2" attributes="0"/>
-              <EmptySpace pref="222" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="btnVerPersonaje" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace pref="175" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,6 +89,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarPersonajeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnVerPersonaje">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Vizualizar Personajes"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerPersonajeActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

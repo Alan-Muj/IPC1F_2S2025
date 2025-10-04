@@ -32,6 +32,7 @@ public class InterfazMenu extends javax.swing.JFrame {
         btnAgregarPersonaje = new javax.swing.JButton();
         btnModificarPersonaje = new javax.swing.JButton();
         btnEliminarPersonaje = new javax.swing.JButton();
+        btnVerPersonaje = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +59,13 @@ public class InterfazMenu extends javax.swing.JFrame {
             }
         });
 
+        btnVerPersonaje.setText("Vizualizar Personajes");
+        btnVerPersonaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPersonajeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,7 +80,8 @@ public class InterfazMenu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnModificarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAgregarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEliminarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnEliminarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnVerPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(201, 201, 201))))
         );
         layout.setVerticalGroup(
@@ -86,7 +95,9 @@ public class InterfazMenu extends javax.swing.JFrame {
                 .addComponent(btnModificarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEliminarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnVerPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         pack();
@@ -119,6 +130,14 @@ public class InterfazMenu extends javax.swing.JFrame {
         this.setVisible(false) ;
     }//GEN-LAST:event_btnEliminarPersonajeActionPerformed
 
+    private void btnVerPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPersonajeActionPerformed
+        // TODO add your handling code here:
+        InterfazVerPersonaje ivp = new InterfazVerPersonaje () ;
+        ivp.setIm(this) ;
+        ivp.setVisible(true) ;
+        this.setVisible(false) ;
+    }//GEN-LAST:event_btnVerPersonajeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -148,6 +167,7 @@ public class InterfazMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarPersonaje;
     private javax.swing.JButton btnEliminarPersonaje;
     private javax.swing.JButton btnModificarPersonaje;
+    private javax.swing.JButton btnVerPersonaje;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
