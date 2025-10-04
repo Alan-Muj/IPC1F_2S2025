@@ -34,6 +34,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="btnModificarPersonaje" alignment="1" min="-2" pref="229" max="-2" attributes="0"/>
                           <Component id="btnAgregarPersonaje" min="-2" pref="229" max="-2" attributes="0"/>
+                          <Component id="btnEliminarPersonaje" alignment="1" min="-2" pref="229" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
                   </Group>
@@ -48,9 +49,11 @@
               <Component id="jLabel1" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btnAgregarPersonaje" min="-2" pref="36" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btnModificarPersonaje" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace pref="252" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="btnEliminarPersonaje" min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace pref="222" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,6 +78,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificarPersonajeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEliminarPersonaje">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Eliminar Personaje"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarPersonajeActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -31,6 +31,7 @@ public class InterfazMenu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnAgregarPersonaje = new javax.swing.JButton();
         btnModificarPersonaje = new javax.swing.JButton();
+        btnEliminarPersonaje = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +51,13 @@ public class InterfazMenu extends javax.swing.JFrame {
             }
         });
 
+        btnEliminarPersonaje.setText("Eliminar Personaje");
+        btnEliminarPersonaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarPersonajeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -63,7 +71,8 @@ public class InterfazMenu extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnModificarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAgregarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnAgregarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEliminarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(201, 201, 201))))
         );
         layout.setVerticalGroup(
@@ -73,9 +82,11 @@ public class InterfazMenu extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAgregarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnModificarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEliminarPersonaje, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(222, Short.MAX_VALUE))
         );
 
         pack();
@@ -83,7 +94,7 @@ public class InterfazMenu extends javax.swing.JFrame {
 
     private void btnAgregarPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPersonajeActionPerformed
         // TODO add your handling code here:
-        InterfazAgregarPersonaje iap = new InterfazAgregarPersonaje ();
+        InterfazAgregarPersonaje iap = new InterfazAgregarPersonaje () ;
         iap.setIm(this) ;
         iap.setVisible(true) ;
         this.setVisible(false) ;
@@ -94,11 +105,19 @@ public class InterfazMenu extends javax.swing.JFrame {
     private void btnModificarPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPersonajeActionPerformed
         // TODO add your handling code here:
         InterfazModificarPersonaje imp = new InterfazModificarPersonaje () ;
-        imp.setIm(this);
+        imp.setIm(this) ;
         imp.setVisible(true) ;
         this.setVisible(false) ;
     
     }//GEN-LAST:event_btnModificarPersonajeActionPerformed
+
+    private void btnEliminarPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPersonajeActionPerformed
+        // TODO add your handling code here:
+        InterfazEliminarPersonaje iep = new InterfazEliminarPersonaje () ;
+        iep.setIm(this) ;
+        iep.setVisible(true) ;
+        this.setVisible(false) ;
+    }//GEN-LAST:event_btnEliminarPersonajeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,6 +146,7 @@ public class InterfazMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarPersonaje;
+    private javax.swing.JButton btnEliminarPersonaje;
     private javax.swing.JButton btnModificarPersonaje;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
