@@ -11,6 +11,8 @@ package com.mycompany.proyecto2;
 public class Proyecto2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        java.awt.EventQueue.invokeLater(() -> { //Para ejecutar la ventana
+            new InterfazLogin().setVisible(true); //Iniciando la interfaz de Login
+        });
     }
 }
