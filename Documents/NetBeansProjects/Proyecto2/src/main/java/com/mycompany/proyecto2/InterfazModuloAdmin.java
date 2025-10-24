@@ -24,6 +24,9 @@ public class InterfazModuloAdmin extends javax.swing.JFrame {
         String ids [] = {"Codigo", "Nombre", "Genero", "Cantidad de ventas confirmadas"} ;
         mt.setColumnIdentifiers(ids);
         jTable1.setModel(mt) ;
+        
+        
+        
     }
     
     

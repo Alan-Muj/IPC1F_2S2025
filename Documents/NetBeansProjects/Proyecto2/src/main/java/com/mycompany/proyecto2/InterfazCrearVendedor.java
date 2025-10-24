@@ -4,17 +4,27 @@
  */
 package com.mycompany.proyecto2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pc1
  */
 public class InterfazCrearVendedor extends javax.swing.JFrame {
     
+    
+    
+    
+    
     private InterfazModuloAdmin ima;
+    
+    
     
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InterfazCrearVendedor.class.getName());
 
+    
+    
     /**
      * Creates new form InterfazCrearVendedor
      */
@@ -23,6 +33,8 @@ public class InterfazCrearVendedor extends javax.swing.JFrame {
     
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -127,6 +139,11 @@ public class InterfazCrearVendedor extends javax.swing.JFrame {
         btnCrearV.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 12)); // NOI18N
         btnCrearV.setText("Crear");
         btnCrearV.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        btnCrearV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearVActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -214,6 +231,50 @@ public class InterfazCrearVendedor extends javax.swing.JFrame {
         this.setVisible(false) ;
     }//GEN-LAST:event_btnCancelarCrearVActionPerformed
 
+    @SuppressWarnings("null")
+    private void btnCrearVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearVActionPerformed
+        
+        //Obteniendo datos
+        
+        String Codigo = txtCodigoV.getText() ;
+        String Nombre = txtNombreV.getText() ;
+        String Genero = (String) txtGeneroV.getSelectedItem() ;
+        String Contra = txtContraseñaV.getText() ;
+        
+        //Varible para codigo repetido
+        boolean repetido = false ;
+        //Condicional campo vacio
+        if(Codigo.isEmpty() || Nombre.isEmpty() || Contra.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "CAMPO VACIO") ;
+            }else {
+                //Condicinal para codigo
+                    for(Data.i= 0; Data.i<Data.contador; Data.i++){
+                        if(Data.CodigoVendedores[Data.i].equals(Codigo)){
+                        repetido = true ;
+                        }
+                    }//fin for
+            }
+            
+        if(repetido){
+            JOptionPane.showMessageDialog(null, "CODIGO REPETIDO");
+        }else{
+            //Guardar otros datos en los arreglos
+            Data.CodigoVendedores[Data.contador] = Codigo ;
+            Data.NombreVendedores[Data.contador] = Nombre ;
+            Data.GeneroVendedores[Data.contador] = Genero ;
+            Data.ContraVendedores[Data.contador] = Contra ;
+        
+            Data.contador++ ; //aumentar contador global
+            JOptionPane.showMessageDialog(null, "VENDEDOR CREADO CORRECTAMENTE") ;
+            
+            //Regresar a el modulo admin
+            ima.setVisible(true) ;
+            this.setVisible(false) ;
+        
+        }
+        
+    }//GEN-LAST:event_btnCrearVActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -256,4 +317,8 @@ public class InterfazCrearVendedor extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> txtGeneroV;
     private javax.swing.JTextField txtNombreV;
     // End of variables declaration//GEN-END:variables
+
+    private void addRow(Object[] object) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
