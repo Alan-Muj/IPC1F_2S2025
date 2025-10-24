@@ -194,12 +194,22 @@ public class InterfazModuloAdmin extends javax.swing.JFrame {
         btnActualizar.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 12)); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 140, 40));
 
         btnEliminar.setBackground(new java.awt.Color(236, 236, 236));
         btnEliminar.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 12)); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 140, 40));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -353,6 +363,20 @@ public class InterfazModuloAdmin extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnCrearActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        InterfazActualizarVendedor iav = new InterfazActualizarVendedor() ;
+        iav.setIMA(this) ;
+        iav.setVisible(true) ;
+        this.setVisible(false) ;
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        InterfazEliminarVendedor iev = new InterfazEliminarVendedor() ;
+        iev.setIMA(this) ;
+        iev.setVisible(true) ;
+        this.setVisible(false) ;
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -113,6 +113,7 @@ public class InterfazCrearVendedor extends javax.swing.JFrame {
             }
         });
 
+        btnCancelarCrearV.setBackground(new java.awt.Color(204, 204, 204));
         btnCancelarCrearV.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 12)); // NOI18N
         btnCancelarCrearV.setText("Cancelar");
         btnCancelarCrearV.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), java.awt.Color.black, java.awt.Color.black));
@@ -122,6 +123,7 @@ public class InterfazCrearVendedor extends javax.swing.JFrame {
             }
         });
 
+        btnCrearV.setBackground(new java.awt.Color(204, 204, 204));
         btnCrearV.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 12)); // NOI18N
         btnCrearV.setText("Crear");
         btnCrearV.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
