@@ -131,6 +131,11 @@ public class InterfazActualizarVendedor extends javax.swing.JFrame {
         btnActualizarV.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 12)); // NOI18N
         btnActualizarV.setText("Actualizar");
         btnActualizarV.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        btnActualizarV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarVActionPerformed(evt);
+            }
+        });
 
         txtMostrarBusquedaAc.setColumns(20);
         txtMostrarBusquedaAc.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 12)); // NOI18N
@@ -229,6 +234,7 @@ public class InterfazActualizarVendedor extends javax.swing.JFrame {
     private void btnBuscarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarVActionPerformed
         //Obetner codigo
         String CodigoB = txtBuscarV.getText() ;
+        
 
         //Busqueda de la posicion del codigo
         if(CodigoB.isEmpty()) {
@@ -238,15 +244,47 @@ public class InterfazActualizarVendedor extends javax.swing.JFrame {
                     for(Data.i= 0; Data.i<Data.contador; Data.i++){
                         if(Data.CodigoVendedores[Data.i].equals(CodigoB)){
                         Data.posicion = Data.i ;
+                        break;
                         }
                     }//fin for
                     
-                    txtMostrarBusquedaAc.setText("Nombre Actual Vendedor: "+ Data.NombreVendedores[Data.posicion] + "\n"
-                    + "Contraseña Actual Vendedor: " + Data.ContraVendedores[Data.posicion]);
+                    //Mostrar datos actuales
+                    txtMostrarBusquedaAc.setText("""
+                                                 DATOS ACTUALES
+                                                 Nombre Actual Vendedor:  """ + Data.NombreVendedores[Data.posicion] + "\n"
+                    + "Contraseña Actual Vendedor: " + Data.ContraVendedores[Data.posicion]) ;
+                    
             }
+        
             
        
     }//GEN-LAST:event_btnBuscarVActionPerformed
+
+    private void btnActualizarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarVActionPerformed
+        //Datos a actualizar
+        String NombreA = txtActualizarNombreV.getText() ;
+        String ContraA = txtActualizarContraV.getText() ;  
+
+        //Datos a Actualizar
+            if(NombreA.isEmpty() && ContraA.isEmpty()){
+                JOptionPane.showMessageDialog(null, "VENDEDOR NO ACTUALIZADO") ;
+            }else{
+                if(NombreA.isEmpty()){
+                }else{
+                Data.NombreVendedores[Data.posicion] = NombreA ;
+                }
+                
+                if(ContraA.isEmpty()){
+                }else{
+                Data.ContraVendedores[Data.posicion] = ContraA ;
+                }
+                JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS CORRECTAMENTE");
+                
+                //Regresar a Interfaz Modulo Admin
+                ima.setVisible(true) ;
+                this.setVisible(false) ;
+            }
+    }//GEN-LAST:event_btnActualizarVActionPerformed
 
     /**
      * @param args the command line arguments

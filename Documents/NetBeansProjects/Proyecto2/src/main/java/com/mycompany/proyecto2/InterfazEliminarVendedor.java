@@ -4,6 +4,8 @@
  */
 package com.mycompany.proyecto2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pc1
@@ -45,7 +47,7 @@ public class InterfazEliminarVendedor extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtBuscarEliminarV = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnBuscarEliminarV = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtMostrarEliminarV = new javax.swing.JTextArea();
         btnCancelarEliminarV = new javax.swing.JButton();
@@ -87,13 +89,13 @@ public class InterfazEliminarVendedor extends javax.swing.JFrame {
 
         txtBuscarEliminarV.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 12)); // NOI18N
-        jButton1.setText("Buscar");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarEliminarV.setBackground(new java.awt.Color(204, 204, 204));
+        btnBuscarEliminarV.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 12)); // NOI18N
+        btnBuscarEliminarV.setText("Buscar");
+        btnBuscarEliminarV.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        btnBuscarEliminarV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBuscarEliminarVActionPerformed(evt);
             }
         });
 
@@ -117,6 +119,11 @@ public class InterfazEliminarVendedor extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 12)); // NOI18N
         jButton3.setText("Eliminar");
         jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -138,7 +145,7 @@ public class InterfazEliminarVendedor extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtBuscarEliminarV, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btnBuscarEliminarV, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(176, 176, 176)
                         .addComponent(btnCancelarEliminarV, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,7 +163,7 @@ public class InterfazEliminarVendedor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuscarEliminarV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBuscarEliminarV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
@@ -180,14 +187,62 @@ public class InterfazEliminarVendedor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnBuscarEliminarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEliminarVActionPerformed
+        //Obetener codigo a buscar
+        String CodigoBE = txtBuscarEliminarV.getText() ;
+        
+        //Busqueda de la posicion del codigo
+        if(CodigoBE.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "CAMPO DE BUSQUEDA VACIO") ;
+            }else {
+                //Condicinal para codigo
+                    for(Data.i= 0; Data.i<Data.contador; Data.i++){
+                        if(Data.CodigoVendedores[Data.i].equals(CodigoBE)){
+                        Data.posicion = Data.i ;
+                        break;
+                        }
+                    }//fin for
+                    
+            txtMostrarEliminarV.setText("VENDEDOR A ELIMINAR" + "\n"
+            + "Codigo vendedor: " + Data.CodigoVendedores[Data.posicion] + "\n"
+            + "Nombre vendedor: " + Data.NombreVendedores[Data.posicion] + "\n"
+            + "Genero vendedor: " + Data.GeneroVendedores[Data.posicion] + "\n"
+            + "Constraseña vendedor: " + Data.ContraVendedores[Data.posicion] + "\n") ;
+                     
+            }//fin else
+        
+        
+    }//GEN-LAST:event_btnBuscarEliminarVActionPerformed
 
     private void btnCancelarEliminarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarEliminarVActionPerformed
         ima.setVisible(true) ;
         this.setVisible(false) ;
     }//GEN-LAST:event_btnCancelarEliminarVActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //moviendo posiciones para borrar Vendedor
+        for(int j = Data.posicion ; j < Data.contador - 1; j++){
+            Data.CodigoVendedores[j] = Data.CodigoVendedores[j+1] ;
+            Data.ContraVendedores[j] = Data.ContraVendedores[j+1] ;
+            Data.NombreVendedores[j] = Data.NombreVendedores[j+1] ;
+            Data.GeneroVendedores[j] = Data.GeneroVendedores[j+1] ;
+        }
+        
+            Data.CodigoVendedores[Data.contador - 1] = null ;
+            Data.ContraVendedores[Data.contador - 1] = null ;
+            Data.NombreVendedores[Data.contador - 1] = null ;
+            Data.GeneroVendedores[Data.contador - 1] = null ;
+        
+        //Actualizar contador
+        Data.contador-- ;
+        
+        JOptionPane.showMessageDialog(null, "VENDEDOR ELIMINADO CORRECTAMENTE");    
+       
+        //Salir a interfaz modulo admin
+        ima.setVisible(true) ;
+        this.setVisible(false) ;
+            
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,8 +270,8 @@ public class InterfazEliminarVendedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarEliminarV;
     private javax.swing.JButton btnCancelarEliminarV;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
