@@ -16,7 +16,7 @@ public class InterfazCrearVendedor extends javax.swing.JFrame {
     
     
     
-    private InterfazModuloAdmin ima;
+    private InterfazModuloAdmin ima ;
     
     
     
@@ -259,12 +259,18 @@ public class InterfazCrearVendedor extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "CODIGO REPETIDO");
         }else{
             //Guardar otros datos en los arreglos
-            Data.CodigoVendedores[Data.contador] = Codigo ;
+            Data.CodigoVendedores[Data.contador] = Codigo ;         
             Data.NombreVendedores[Data.contador] = Nombre ;
             Data.GeneroVendedores[Data.contador] = Genero ;
             Data.ContraVendedores[Data.contador] = Contra ;
+            Data.VentasConfi[Data.contador] = 0 ;
         
             Data.contador++ ; //aumentar contador global
+            
+            Object[] fila = {Codigo,Nombre,Genero,0};
+            InterfazModuloAdmin.mt.addRow(fila);
+            
+            
             JOptionPane.showMessageDialog(null, "VENDEDOR CREADO CORRECTAMENTE") ;
             
             //Regresar a el modulo admin

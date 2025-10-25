@@ -21,5 +21,5 @@ public class Data {
     public static String [] NombreVendedores = new String[25] ;
     public static String [] GeneroVendedores = new String[25] ;
     public static String [] ContraVendedores = new String[25] ;
-    
+    public static int [] VentasConfi = new int[25] ;
 }

@@ -219,10 +219,25 @@ public class InterfazLogin extends javax.swing.JFrame {
         
             }else {if(Codigo.equals("admin") && Contraseña.equals("IPC1F")){ // Condicional para comparar si son correctas las credenciales
                 InterfazModuloAdmin ivp = new InterfazModuloAdmin() ; //Iniciando la ventana de Administrador
+                ivp.setIL(this) ;
                 ivp.setVisible(true) ; //Dandole visibiilidad a la ventana
-                this.dispose() ; //Cerrando la ventana de login            
-            
+                this.setVisible(false) ; //Ocultando la ventana de login
+                txtCodigo.setText("");  //Limpiar espacios
+                txtContraseña.setText("");
+                            
                 }else{
+                    for(Data.i= 0; Data.i<Data.contador; Data.i++){
+                        if(Data.CodigoVendedores[Data.i].equals(Codigo)){
+                        Data.posicion = Data.i ;
+                        break;
+                        }    
+                    }//fin for
+                    
+                    if(Data.ContraVendedores[Data.posicion].equals(Contraseña)){
+                    //iniciar modulo vendedores
+                    
+                    }
+                    
                     JOptionPane.showMessageDialog(null, "CREDENCIALES INVALIDAS");
             
                 }
